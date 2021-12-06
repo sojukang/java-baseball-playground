@@ -52,7 +52,15 @@ public class StringCalculatorTest {
 	void devideTest() {
 		String testInput = "3";
 		cal.add("3");
-		cal.devide(testInput);
+		cal.divide(testInput);
 		assertThat(cal.getResult()).isEqualTo(1);
+	}
+
+	@Test
+	@DisplayName("문자열 -> 계산 기능 테스트")
+	void calculateTest() {
+		String testInput = "2 + 3 * 4 / 2";
+		cal.calculate(testInput);
+		assertThat(cal.getResult()).isEqualTo(10);
 	}
 }
