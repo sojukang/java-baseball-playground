@@ -1,7 +1,5 @@
 package study;
 
-import static jdk.nashorn.internal.objects.NativeJava.*;
-
 import java.util.Scanner;
 
 public class StringCalculator {
@@ -38,21 +36,21 @@ public class StringCalculator {
 
 	public void calculate(String input) {
 		String[] values = splitByBlank(input);
-		for (int i = 0;i < values.length;i++) {
+		for (int i = 0; i < values.length; i++) {
 			if (i == 0) {
 				this.result += Integer.parseInt(values[i]);
 			}
 			if (values[i].equals("+")) {
-				add(values[i+1]);
+				add(values[i + 1]);
 			}
 			if (values[i].equals("-")) {
-				minus(values[i+1]);
+				minus(values[i + 1]);
 			}
 			if (values[i].equals("*")) {
-				multiply(values[i+1]);
+				multiply(values[i + 1]);
 			}
 			if (values[i].equals("/")) {
-				divide(values[i+1]);
+				divide(values[i + 1]);
 			}
 		}
 	}
