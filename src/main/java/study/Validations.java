@@ -10,6 +10,12 @@ public class Validations {
 
 	private static final int MIN_NUMBER_RANGE = 1;
 
+	public static void validUserInput(String input) {
+		validNo(input);
+		validLength(input);
+		validOverlap(input);
+		validRange(input);
+	}
 	public static void validNo(String input) throws IllegalArgumentException {
 		Integer.parseInt(input);
 	}
@@ -21,7 +27,7 @@ public class Validations {
 	}
 
 	public static boolean validOverlap(String input) {
-		List<String> list = new ArrayList<>(Arrays.asList(input));
+		List<String> list = new ArrayList<>(Arrays.asList(input.split("")));
 		Set<String> set = new HashSet<>(list);
 		if (set.size() < input.length()) {
 			throw new IllegalArgumentException();

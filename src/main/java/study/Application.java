@@ -1,7 +1,7 @@
 package study;
 
 public class Application {
-	private static final String GET_USER_INPUT_MESSAGE = "계산할 내용을 입력하세요.";
+	private static final String GET_USER_INPUT_MESSAGE = "숫자를 입력해 주세요 : ";
 
 	public static void main(String[] args) {
 		StringCalculator cal = new StringCalculator();
