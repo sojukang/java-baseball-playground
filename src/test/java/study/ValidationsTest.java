@@ -14,4 +14,13 @@ public class ValidationsTest {
 			Validations.validNo(input);
 		}).isInstanceOf(IllegalArgumentException.class);
 	}
+
+	@Test
+	@DisplayName("3자리 넘는 경우")
+	void validLengthTest() {
+		String input = "1234";
+		assertThatThrownBy(() -> {
+			Validations.validLength(input);
+		}).isInstanceOf(IllegalArgumentException.class);
+	}
 }
