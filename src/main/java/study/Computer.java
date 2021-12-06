@@ -11,17 +11,15 @@ public class Computer {
 		return new Random().nextInt(MAX_RANDOM_RANGE) + 1;
 	}
 
-	public String generateComputerNO() {
+	public List<Integer> generateComputerNO() {
 		List<Integer> computerNo = new ArrayList<>();
 		while (computerNo.size() < 3) {
-			int i = 0;
 			int newNo = getRandomNo();
 			if (!computerNo.contains(newNo)) {
 				computerNo.add(newNo);
 			}
-			i++;
 		}
-		return computerNo.toString();
+		return computerNo;
 	}
 
 

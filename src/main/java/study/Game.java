@@ -1,5 +1,7 @@
 package study;
 
+import java.util.List;
+
 public class Game {
 	public static BallStatus isStrike(Ball userBall, Ball computerBall) {
 		if (userBall.equals(computerBall)) {
@@ -37,5 +39,18 @@ public class Game {
 				ballCount++;
 			}
 		} return ballCount;
+	}
+
+	public static Balls generateComputerBalls() {
+		Computer com = new Computer();
+		List<Integer> comNo = com.generateComputerNO();
+		return new Balls(new Ball(1, comNo.get(0)), new Ball(2, comNo.get(1)), new Ball(3, comNo.get(2)));
+	}
+
+	public static void main(String[] args) {
+		Balls newBalls = generateComputerBalls();
+		System.out.println(newBalls.getBall(0).getBallNo());
+		System.out.println(newBalls.getBall(1).getBallNo());
+		System.out.println(newBalls.getBall(2).getBallNo());
 	}
 }
