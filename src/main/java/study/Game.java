@@ -2,7 +2,7 @@ package study;
 
 public class Game {
 	public static BallStatus isStrike(Ball userBall, Ball computerBall) {
-		if (userBall.getPosition() == computerBall.getPosition() && userBall.getBallNo() == computerBall.getBallNo()) {
+		if (userBall.equals(computerBall)) {
 			return BallStatus.STRIKE;
 		}
 		return null;
@@ -17,5 +17,15 @@ public class Game {
 
 	public static BallStatus isNothing(Ball userBall, Ball computerBall) {
 		return BallStatus.NOTHING;
+	}
+
+	public static int countStrike(Balls userBalls, Balls computerBalls) {
+		int strikeCount = 0;
+		for (int i = 0;i < 3;i++) {
+			if (userBalls.getBall(i).equals(computerBalls.getBall(i))) {
+				strikeCount++;
+			}
+		}
+		return strikeCount;
 	}
 }

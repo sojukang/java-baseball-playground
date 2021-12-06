@@ -11,7 +11,7 @@ public class BallTest {
 	void strikeTest() {
 		Ball testBall = new Ball(1, 1);
 		Ball targetBall = new Ball(1, 1);
-		assertThat(targetBall.equals(testBall)).isTrue();
+		assertThat(Game.isStrike(testBall, targetBall)).isEqualTo(BallStatus.STRIKE);
 	}
 
 	@Test
