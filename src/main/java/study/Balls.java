@@ -30,4 +30,13 @@ public class Balls {
 	public Ball getBall(int i) {
 		return this.ballList.get(i);
 	}
+
+	public boolean contains(Ball ball) {
+		for (int i = 0;i < 3;i++) {
+			if (this.getBall(i).getBallNo() == ball.getBallNo()) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

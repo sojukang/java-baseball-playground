@@ -21,11 +21,21 @@ public class Game {
 
 	public static int countStrike(Balls userBalls, Balls computerBalls) {
 		int strikeCount = 0;
-		for (int i = 0;i < 3;i++) {
+		for (int i = 0; i < 3; i++) {
 			if (userBalls.getBall(i).equals(computerBalls.getBall(i))) {
 				strikeCount++;
 			}
 		}
 		return strikeCount;
+	}
+
+	public static int countBall(Balls userBalls, Balls computerBalls) {
+		int ballCount = 0;
+		for (int i = 0; i < 3; i++) {
+			if (Game.isStrike(userBalls.getBall(i), computerBalls.getBall(i)) == null && computerBalls.contains(
+				userBalls.getBall(i))){
+				ballCount++;
+			}
+		} return ballCount;
 	}
 }
