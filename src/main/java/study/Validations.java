@@ -20,12 +20,13 @@ public class Validations {
 		}
 	}
 
-	public static void validOverlap(String input) {
+	public static boolean validOverlap(String input) {
 		List<String> list = new ArrayList<>(Arrays.asList(input));
 		Set<String> set = new HashSet<>(list);
 		if (set.size() < input.length()) {
 			throw new IllegalArgumentException();
 		}
+		return true;
 	}
 
 	public static void validRange(String input) {
@@ -34,9 +35,5 @@ public class Validations {
 				throw new IllegalArgumentException();
 			}
 		}
-	}
-
-	public static void main(String[] args) {
-		validRange("312");
 	}
 }
