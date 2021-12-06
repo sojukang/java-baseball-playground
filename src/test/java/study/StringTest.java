@@ -28,9 +28,26 @@ public class StringTest {
 
     @Test
     @DisplayName("()제거")
-    void removeParenthesis() {
+    void removeParenthesisTest() {
         String actual = "(1,2)";
         actual = actual.substring(1, actual.length()-1);
         assertThat(actual).isEqualTo("1,2");
+    }
+
+    @Test
+    @DisplayName("특정 위치 문자 가져오기")
+    void charAtTest() {
+        String actual = "abc";
+        assertThat(actual.charAt(0)).isEqualTo('a');
+    }
+
+    @Test
+    @DisplayName("chatAt StringIndexOutOfBoundsException")
+    void charAtExceptionTest() {
+        String actual = "abc";
+        assertThatThrownBy(() -> {
+            actual.charAt(3);
+        }).isInstanceOf(IndexOutOfBoundsException.class)
+            .hasMessageContaining("range: 3");
     }
 }
