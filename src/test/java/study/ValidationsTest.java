@@ -32,4 +32,13 @@ public class ValidationsTest {
 			Validations.validOverlap(input);
 		}).isInstanceOf(IllegalArgumentException.class);
 	}
+
+	@Test
+	@DisplayName("숫자 범위 검증")
+	void validRangeTest() {
+		String input = "012";
+		assertThatThrownBy(() -> {
+			Validations.validRange(input);
+		}).isInstanceOf(IllegalArgumentException.class);
+	}
 }
