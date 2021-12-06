@@ -23,4 +23,13 @@ public class ValidationsTest {
 			Validations.validLength(input);
 		}).isInstanceOf(IllegalArgumentException.class);
 	}
+
+	@Test
+	@DisplayName("중복 있는 경우")
+	void validOverlapTest() {
+		String input = "133";
+		assertThatThrownBy(() -> {
+			Validations.validOverlap(input);
+		}).isInstanceOf(IllegalArgumentException.class);
+	}
 }
