@@ -22,5 +22,37 @@ public class StringCalculatorTest {
 		assertThat(cal.splitByBlank(testStr)).isEqualTo(expected);
 	}
 
+	@Test
+	@DisplayName("+ 기능 테스트")
+	void plusTest() {
+		String testInput = "3";
+		cal.add(testInput);
+		assertThat(cal.getResult()).isEqualTo(3);
+	}
 
+	@Test
+	@DisplayName("- 기능 테스트")
+	void minusTest() {
+		String testInput = "3";
+		cal.minus(testInput);
+		assertThat(cal.getResult()).isEqualTo(-3);
+	}
+
+	@Test
+	@DisplayName("* 기능 테스트")
+	void multiplyTest() {
+		String testInput = "3";
+		cal.add("1");
+		cal.multiply(testInput);
+		assertThat(cal.getResult()).isEqualTo(3);
+	}
+
+	@Test
+	@DisplayName("/ 기능 테스트")
+	void devideTest() {
+		String testInput = "3";
+		cal.add("3");
+		cal.devide(testInput);
+		assertThat(cal.getResult()).isEqualTo(1);
+	}
 }
